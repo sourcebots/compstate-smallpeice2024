@@ -17,11 +17,10 @@ teams:
     disqualified: false
     present: true
     zone: 2
-    actions: 'A'
+    actions: 'I'
 ```
 
 Actions are:
-  - 'A' for pick up can (denoted upper chevron on paper)
-  - 'V' for drop can (denoted lower chevron on paper)
+  - 'C' for knocking over a can (denoted C on paper)
   - 'I' for pass line (denoted vertical line on paper)
   - 'X' for reverse over line (denoted X on paper)
