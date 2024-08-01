@@ -23,17 +23,13 @@ class Scorer:
     def calculate_score(actions: str) -> int:
         lines_passed = 0
         line_deficit = 0
-        num_cans = 0
         accumulated_score = 0
+        touched_can = False
 
         for action in actions:
             action = action.upper()
-            if action == 'A':  # Pick up can
-                num_cans += 1
-            elif action == 'V':  # Drop can
-                if num_cans == 0:
-                    raise InvalidScoresheetException('Cannot drop a can if there are no cans')
-                num_cans -= 1
+            if action == 'C':  # Touch can
+                touched_can = True
             elif action == 'X':  # Reverse over line
                 line_deficit += 1
             elif action == 'I':  # Forward over line
@@ -42,19 +38,24 @@ class Scorer:
                     # forward over a line
                     line_deficit -= 1
                 else:
-                    # This is a new line passed; first, we score 2^can_count points directly.
-                    accumulated_score += 2 ** num_cans
+                    # This is a new line passed; first, give points
+                    accumulated_score += 2
+
+                    # Then, if a can hasn't been touched, award another point
+                    if not touched_can:
+                        accumulated_score += 1
+
                     # Then, we increase the number of lines passed by one
                     lines_passed += 1
-                    # And if it's a full lap, that is, a multiple of 6 lines, we get 4 bonus
-                    # points
-                    if lines_passed % 6 == 0:
+
+                    # And if it's a full lap, we get 4 bonus points
+                    if lines_passed > 1 and lines_passed % 6 == 1:
                         accumulated_score += 4
+
+                    # Reset can touch
+                    touched_can = False
             else:
                 raise InvalidScoresheetException(f'Invalid action {action!r}')
-
-        # At the end, we get two bonus points for each can we still have
-        accumulated_score += 2 * num_cans
 
         return accumulated_score
 
@@ -65,22 +66,21 @@ if __name__ == '__main__':
 
     test_cases = [
         ('', 0),
-        ('A', 2),
-        ('I', 1),
-        ('AI', 4),
-        ('IA', 3),
-        ('AVI', 1),
-        ('XAIV', 0),
-        ('AAAI', 14),
-        ('AAAIVVV', 8),
-        ('IIIII', 5),
-        ('IIIIII', 10),
-        ('IIIIIXI', 5),
-        ('IIIIIXII', 10),
-        ('IIIIIIXI', 10),
-        ('IIIIIIX', 10),
-        ('IIIIIIXII', 11),
-        ('I' * 6 * 2, 6 * 2 + 4 * 2),
+        ('I', 3),
+        ('IX', 3),
+        ('XI', 0),
+        ('ICXI', 3),
+        ('ICXII', 5),
+        ('ICII', 8),
+        ('ICCII', 8),
+        ('ICICI', 7),
+        ('I' * 5, 15),
+        ('I' * 6, 18),
+        ('I' * 7, 3 * 7 + 4),  # 1 full lap
+        ('IIIIIICI', 24),
+        ('I' * 13, 3 * 13 + 4 * 2),  # 2 full laps
+        ('I' * 14, 3 * 14 + 4 * 2),  # 2 full laps
+        ('IIIXXXIIIXXXI', 9),
     ]
 
     failures = 0
