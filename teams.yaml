@@ -1,0 +1,21 @@
+teams:
+  T01:
+    name: Team 1
+  T02:
+    name: Team 2
+  T03:
+    name: Team 3
+  T04:
+    name: Team 4
+  T05:
+    name: Team 5
+  T06:
+    name: Team 6
+  T07:
+    name: Team 7
+  T08:
+    name: Team 8
+  T09:
+    name: Team 9
+  T10:
+    name: Team 10

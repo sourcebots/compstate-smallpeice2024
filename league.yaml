@@ -1,0 +1,81 @@
+matches:
+  0:
+    main:
+    - T08
+    - T09
+  1:
+    main:
+    - T04
+    - T05
+  2:
+    main:
+    - T10
+    - T03
+  3:
+    main:
+    - T07
+    - T01
+  4:
+    main:
+    - T06
+    - T09
+  5:
+    main:
+    - T05
+    - T08
+  6:
+    main:
+    - T02
+    - T03
+  7:
+    main:
+    - T04
+    - T07
+  8:
+    main:
+    - T06
+    - T01
+  9:
+    main:
+    - T09
+    - T10
+  10:
+    main:
+    - T03
+    - T08
+  11:
+    main:
+    - T02
+    - T04
+  12:
+    main:
+    - T05
+    - T06
+  13:
+    main:
+    - T01
+    - T10
+  14:
+    main:
+    - T08
+    - T07
+  15:
+    main:
+    - T09
+    - T02
+  16:
+    main:
+    - T03
+    - T06
+  17:
+    main:
+    - T01
+    - T05
+  18:
+    main:
+    - T10
+    - T04
+  19:
+    main:
+    - T07
+    - T02

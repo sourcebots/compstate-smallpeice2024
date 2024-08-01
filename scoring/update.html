@@ -1,0 +1,59 @@
+{% extends "_update.html" %}
+
+{% macro input_robot_actions_wider(x, y, corner) %}
+<foreignObject x="{{ x }}" y="{{ y }}" width="220" height="30">
+  <label
+    for="robot_actions_{{ corner }}"
+  >
+    Robot {{ corner + 1 }} Actions:
+  </label>
+</foreignObject>
+<foreignObject x="{{ x + 200 }}" y="{{ y }}" width="400" height="30">
+  <input
+    class="actions"
+    type="text"
+    id="robot_actions_{{ corner }}"
+    name="robot_actions_{{ corner }}"
+    value="{{ request.form.get('robot_actions_{}'.format(corner)) | empty_if_none }}"
+    onkeyup="token_input_change(this);"
+  />
+</foreignObject>
+{% endmacro %}
+
+{% block form_content %}
+                <svg xmlns="http://www.w3.org/2000/svg" {% block svg_size %}height="600" width="600"{% endblock %} version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    {% block background %}
+                        <rect height="600" width="600" stroke="#000" y="0" x="0" stroke-width="2" fill="#f4f3ff"/>
+                        <path d="M0 300 H 600" stroke="#000" stroke-width="1"/>
+                    {% endblock %}
+
+                    <g font-size="2.5em" fill="#4d4d4d" transform="scale(0.75 0.75)">
+                        <text><tspan y="50" x="350" stroke="{{ corners[1].colour }}">Zone 1</tspan></text>
+                        <text><tspan y="450" x="350" stroke="{{ corners[2].colour }}">Zone 2</tspan></text>
+                    </g>
+
+                    {% block zone_0 %}
+                    {{ input_tla(230, 50, 0) }}
+                    {{ input_present(230, 100, 0) }}
+                    {{ input_disqualified(190, 150, 0) }}
+                    {{ input_robot_actions_wider(-10, 200, 0) }}
+                    {% endblock %}
+
+                    {% block zone_1 %}
+                    {{ input_tla(230, 350, 1) }}
+                    {{ input_present(230, 400, 1) }}
+                    {{ input_disqualified(190, 450, 1) }}
+                    {{ input_robot_actions_wider(-10, 500, 1) }}
+                    {% endblock %}
+
+                    {% block zone_other %}
+                      <foreignObject x="150" y="560" height="100" width="400">
+                        <text style="font-size:24px">Valid Characters are A V I X</text>
+                      </foreignObject>
+                    {% endblock %}
+
+                </svg>
+            {% endblock %}
+{% block valid_token_regex %}
+var valid_token_regex = /^[AVIX]*$/;
+{% endblock %}

@@ -1,0 +1,4 @@
+shepherds:
+  - name: "Shepherd"
+    colour: 'white'
+    regions: [venue]
