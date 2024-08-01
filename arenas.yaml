@@ -2,7 +2,7 @@ arenas:
   main:
     display_name: ''
 corners:
-  1:
+  0:
     colour: '#00ff00'
-  2:
+  1:
     colour: '#ff6600'
