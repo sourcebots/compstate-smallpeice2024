@@ -14,9 +14,7 @@ staging:
 
 timezone: Europe/London
 
-delays:
-- delay: 300
-  time: 2024-08-10 10:45:00+01:00
+delays: {}
 
 match_periods:
   league:
