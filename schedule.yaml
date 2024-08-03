@@ -30,9 +30,7 @@ match_periods:
     description: Knockout
 
 league:
-  extra_spacing:
-  - match_numbers: 1,2,3,4
-    duration: 15
+  extra_spacing: {}
 
 knockout:
   static: true
