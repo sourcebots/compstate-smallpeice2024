@@ -21,7 +21,6 @@ class Scorer:
 
     @staticmethod
     def calculate_score(actions: str) -> int:
-        lines_passed = 0
         line_deficit = 0
         accumulated_score = 0
         touched_can = False
@@ -44,13 +43,6 @@ class Scorer:
                     # Then, if a can hasn't been touched, award another point
                     if not touched_can:
                         accumulated_score += 1
-
-                    # Then, we increase the number of lines passed by one
-                    lines_passed += 1
-
-                    # And if it's a full lap, we get 4 bonus points
-                    if lines_passed > 1 and lines_passed % 6 == 1:
-                        accumulated_score += 4
 
                     # Reset can touch
                     touched_can = False
@@ -76,10 +68,10 @@ if __name__ == '__main__':
         ('ICICI', 7),
         ('I' * 5, 15),
         ('I' * 6, 18),
-        ('I' * 7, 3 * 7 + 4),  # 1 full lap
-        ('IIIIIICI', 24),
-        ('I' * 13, 3 * 13 + 4 * 2),  # 2 full laps
-        ('I' * 14, 3 * 14 + 4 * 2),  # 2 full laps
+        ('I' * 7, 3 * 7),  # 1 full lap
+        ('IIIIIICI', 20),
+        ('I' * 13, 3 * 13),
+        ('I' * 14, 3 * 14),  # 2 full laps
         ('IIIXXXIIIXXXI', 9),
     ]
 
