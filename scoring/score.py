@@ -24,6 +24,7 @@ class Scorer:
         line_deficit = 0
         accumulated_score = 0
         touched_can = False
+        lines_crossed = 0
 
         for action in actions:
             action = action.upper()
@@ -41,8 +42,10 @@ class Scorer:
                     accumulated_score += 2
 
                     # Then, if a can hasn't been touched, award another point
-                    if not touched_can:
+                    if not touched_can and lines_crossed != 0:
                         accumulated_score += 1
+
+                    lines_crossed += 1
 
                     # Reset can touch
                     touched_can = False
@@ -58,21 +61,21 @@ if __name__ == '__main__':
 
     test_cases = [
         ('', 0),
-        ('I', 3),
-        ('IX', 3),
+        ('I', 2),
+        ('IX', 2),
         ('XI', 0),
-        ('ICXI', 3),
-        ('ICXII', 5),
-        ('ICII', 8),
-        ('ICCII', 8),
-        ('ICICI', 7),
-        ('I' * 5, 15),
-        ('I' * 6, 18),
-        ('I' * 7, 3 * 7),  # 1 full lap
-        ('IIIIIICI', 20),
-        ('I' * 13, 3 * 13),
-        ('I' * 14, 3 * 14),  # 2 full laps
-        ('IIIXXXIIIXXXI', 9),
+        ('ICXI', 2),
+        ('ICXII', 4),
+        ('ICII', 7),
+        ('ICCII', 7),
+        ('ICICI', 6),
+        ('I' * 5, 14),
+        ('I' * 6, 17),
+        ('I' * 7, 3 * 7 - 1),  # 1 full lap
+        ('IIIIIICI', 19),
+        ('I' * 13, 3 * 13 - 1),
+        ('I' * 14, 3 * 14 - 1),  # 2 full laps
+        ('IIIXXXIIIXXXI', 8),
     ]
 
     failures = 0
