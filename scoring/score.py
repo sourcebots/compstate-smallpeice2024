@@ -26,8 +26,7 @@ class Scorer:
         touched_can = False
         lines_crossed = 0
 
-        for action in actions:
-            action = action.upper()
+        for action in actions.upper():
             if action == 'C':  # Touch can
                 touched_can = True
             elif action == 'X':  # Reverse over line
