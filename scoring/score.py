@@ -76,6 +76,7 @@ if __name__ == '__main__':
         ('I' * 13, 3 * 13 - 1),
         ('I' * 14, 3 * 14 - 1),  # 2 full laps
         ('IIIXXXIIIXXXI', 8),
+        ('IXCII', 4)
     ]
 
     failures = 0
