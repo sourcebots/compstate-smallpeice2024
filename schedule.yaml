@@ -18,15 +18,15 @@ delays: {}
 
 match_periods:
   league:
-  - start_time: 2024-08-10 10:45:00+01:00
-    end_time: 2024-08-10 12:10:00+01:00
-    max_end_time: 2024-08-10 12:20:00+01:00
+  - start_time: 2024-08-09 10:45:00+01:00
+    end_time: 2024-08-09 12:10:00+01:00
+    max_end_time: 2024-08-09 12:20:00+01:00
     description: League
 
   knockout:
-  - start_time: 2024-08-10 13:00:00+01:00
-    end_time: 2024-08-10 14:00:00+01:00
-    max_end_time: 2024-08-10 14:00:00+01:00
+  - start_time: 2024-08-09 13:00:00+01:00
+    end_time: 2024-08-09 14:00:00+01:00
+    max_end_time: 2024-08-09 14:00:00+01:00
     description: Knockout
 
 league:
@@ -42,59 +42,59 @@ static_knockout:
     0:  # Round of 8
       0:
         arena: main
-        start_time: 2024-08-10 13:00:00+01:00
+        start_time: 2024-08-09 13:00:00+01:00
         display_name: Heat 1
         teams: [S3, S10]
       1:
         arena: main
-        start_time: 2024-08-10 13:04:00+01:00
+        start_time: 2024-08-09 13:04:00+01:00
         display_name: Heat 2
         teams: [S5, S8]
       2:
         arena: main
-        start_time: 2024-08-10 13:08:00+01:00
+        start_time: 2024-08-09 13:08:00+01:00
         display_name: Heat 3
         teams: [S6, S7]
       3:
         arena: main
-        start_time: 2024-08-10 13:12:00+01:00
+        start_time: 2024-08-09 13:12:00+01:00
         display_name: Heat 4
         teams: [S4, S9]
     1: # Quarterfinals
       0:
         arena: main
-        start_time: 2024-08-10 13:20:00+01:00
+        start_time: 2024-08-09 13:20:00+01:00
         display_name: Quarterfinal 1
         #        S3     S6
         teams: ['000', '020']
       1:
         arena: main
-        start_time: 2024-08-10 13:24:00+01:00
+        start_time: 2024-08-09 13:24:00+01:00
         display_name: Quarterfinal 2
         #        S5     S4
         teams: ['010', '030']
     2: # Semifinals
       0:
         arena: main
-        start_time: 2024-08-10 13:32:00+01:00
+        start_time: 2024-08-09 13:32:00+01:00
         display_name: Semifinal 1
         #            S3
         teams: [S2, '100']
       1:
         arena: main
-        start_time: 2024-08-10 13:36:00+01:00
+        start_time: 2024-08-09 13:36:00+01:00
         display_name: Semifinal 2
         #            S4
         teams: [S1, '110']
     3: # Third-place playoff
       0:
         arena: main
-        start_time: 2024-08-10 13:44:00+01:00
+        start_time: 2024-08-09 13:44:00+01:00
         display_name: Third-place playoff
         teams: ['201', '211']
     4: # Final
       0:
         arena: main
-        start_time: 2024-08-10 13:53:00+01:00
+        start_time: 2024-08-09 13:53:00+01:00
         display_name: Grand Final
         teams: ['200', '210']
