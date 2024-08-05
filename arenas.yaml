@@ -3,6 +3,6 @@ arenas:
     display_name: ''
 corners:
   0:
-    colour: '#00ff00'
-  1:
     colour: '#ff6600'
+  1:
+    colour: '#00ff00'
