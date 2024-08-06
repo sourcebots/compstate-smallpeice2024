@@ -1,4 +1,6 @@
 # Electronics Lab
 # Completing the lab earns the team 4 points
 
-scores: {}
+scores:
+- team: T08
+  league_points: 4
