@@ -2,7 +2,7 @@ teams:
   T01:
     name: Team 1
   T02:
-    name: Team 2
+    name: CrowdStrike
   T03:
     name: Toblerone
   T04:
@@ -12,10 +12,10 @@ teams:
   T06:
     name: Team 6
   T07:
-    name: Team 7
+    name: Jeff Bezos
   T08:
-    name: Team 8
+    name: Cheese
   T09:
-    name: Team 9
+    name: JADAS09
   T10:
-    name: Team 10
+    name: Ziptie
