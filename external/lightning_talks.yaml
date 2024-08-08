@@ -1,0 +1,13 @@
+# Lightening talks
+
+scores:
+- team: T07
+  league_points: 4
+- team: T09
+  league_points: 4
+- team: T02
+  league_points: 2
+- team: T03
+  league_points: 2
+- team: T05
+  league_points: 1
